@@ -1,4 +1,4 @@
-package GoAlgo
+package linearsearch
 
 func LinearSearch(arr []string, search string) (int, bool) {
 	for i, v := range arr {
