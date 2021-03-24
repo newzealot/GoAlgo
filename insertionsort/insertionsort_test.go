@@ -10,7 +10,7 @@ type TestData struct {
 	want      []string
 }
 
-func TestLinearSearch(t *testing.T) {
+func TestInsertionSort(t *testing.T) {
 	tests := []TestData{
 		{[]string{"5", "4", "3", "1", "2"},
 			[]string{"1", "2", "3", "4", "5"}},
