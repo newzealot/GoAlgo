@@ -10,8 +10,14 @@ jobs:
     steps:
       - name: Checkout my codes
         uses: actions/checkout@v2.3.4
+      - name: Publish Unit Test Results
+        uses: EnricoMi/publish-unit-test-result-action@v1
+        if: always()
+        with:
+          files: test-results/**/*.xml
       - name: Setup go
         uses: actions/setup-go@v2.1.3
-      - name: Check Go Version
+      - name: Run Unit Tests
         run: |
-          go test -v ./...
+          go get github.com/tebeka/go2xunit
+          go test -v ./... | go2xunit > report.xml
