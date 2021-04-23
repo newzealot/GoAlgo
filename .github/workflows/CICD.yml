@@ -1,1 +1,13 @@
+name: CICD for GO
 
+on:
+  push:
+    branches: [master]
+
+jobs:
+  build:
+    runs-on: ubuntu-20.04
+    steps:
+      - name: Checkout my codes
+        uses: actions/checkout@v2
+        
