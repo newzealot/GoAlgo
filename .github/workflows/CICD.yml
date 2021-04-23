@@ -17,6 +17,7 @@ jobs:
       - name: Install dependencies
         run: |
           go get github.com/tebeka/go2xunit
+          which go
           
       - name: Run unit tests
         run: |
