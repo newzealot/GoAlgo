@@ -9,7 +9,7 @@ jobs:
     runs-on: ubuntu-20.04
     steps:
       - name: Checkout my codes
-        uses: actions/checkout@v2
+        uses: actions/checkout@v2.3.4
       - name: Setup go
-        uses: action/setup-go@v2
+        uses: actions/setup-go@v2.1.3
         
