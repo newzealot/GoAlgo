@@ -17,11 +17,10 @@ jobs:
       - name: Install dependencies
         run: |
           go get github.com/tebeka/go2xunit
-          which go
           
       - name: Run unit tests
         run: |
-          go test -v ./... | $(GOPATH)/bin/go2xunit -output test_report.xml
+          go test -v ./... | /home/runner/go/bin/go2xunit -output test_report.xml
           
       - name: Publish results
         uses: EnricoMi/publish-unit-test-result-action@v1
