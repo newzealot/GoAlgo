@@ -14,4 +14,5 @@ jobs:
         uses: actions/setup-go@v2.1.3
       - name: Check Go Version
         run: |
+          go version
           go test - v ./...
