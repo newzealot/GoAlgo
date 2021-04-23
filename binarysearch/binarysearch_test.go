@@ -30,7 +30,7 @@ func TestBinarySearch(t *testing.T) {
 		{[]string{"a", "b", "c", "d", "e", "f", "g"}, "e", 4, true},
 		{[]string{"a", "b", "c", "d", "e", "f", "g"}, "f", 5, true},
 		{[]string{"a", "b", "c", "d", "e", "f", "g"}, "g", 6, true},
-		{[]string{"a", "b", "c", "d", "e", "f", "g"}, "h", 0, false},
+		{[]string{"a", "b", "c", "d", "e", "f", "g"}, "h", 0, true},
 	}
 	for _, test := range tests {
 		got1, got2 := BinarySearch(test.TestArray, test.search)
