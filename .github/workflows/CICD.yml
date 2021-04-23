@@ -10,4 +10,6 @@ jobs:
     steps:
       - name: Checkout my codes
         uses: actions/checkout@v2
+      - name: Setup go
+        uses: action/setup-go@v2
         
