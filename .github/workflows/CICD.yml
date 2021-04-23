@@ -11,18 +11,22 @@ jobs:
       - name: Checkout my codes
         uses: actions/checkout@v2.3.4
         
-      - name: Setup go
+      - if: ${{success()}}  
+        name: Setup go
         uses: actions/setup-go@v2.1.3
         
-      - name: Install dependencies
+      - if: ${{success()}}    
+        name: Install dependencies
         run: |
           go get github.com/tebeka/go2xunit
           
-      - name: Run unit tests
+      - if: ${{success()}}      
+        name: Run unit tests
         run: |
           go test -v ./... | /home/runner/go/bin/go2xunit -output test_report.xml
           
-      - name: Publish results
+      - if: ${{success()}}      
+        name: Publish unit results
         uses: EnricoMi/publish-unit-test-result-action@v1
         with:
           files: test_report.xml
