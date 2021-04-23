@@ -18,11 +18,11 @@ jobs:
         run: |
           go get github.com/tebeka/go2xunit
           
-      - name: Run Unit Tests
+      - name: Run unit tests
         run: |
-          go test -v ./... | go2xunit >report.xml
+          go test -v ./... | $(GOPATH)/bin/go2xunit -output test_report.xml
           
-      - name: Publish Unit Test Results
+      - name: Publish results
         uses: EnricoMi/publish-unit-test-result-action@v1
         with:
-          files: report.xml
+          files: test_report.xml
